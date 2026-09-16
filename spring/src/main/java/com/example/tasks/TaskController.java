@@ -28,6 +28,6 @@ public class TaskController {
         }
 
         tasks.add(description);
-        return Map.of("message", "Task createddd", "description", description);
+        return Map.of("message", "Task created", "description", description);
     }
 }
