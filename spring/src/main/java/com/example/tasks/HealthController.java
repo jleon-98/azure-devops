@@ -14,4 +14,12 @@ public class HealthController {
     public Map<String, String> health() {
         return Map.of("Anuski", "LA MEJOR");
     }
+
+  
+
+  @GetMapping("/fiebre")
+    public Map<String, String> health() {
+        return Map.of("Temperatura del paciente", "Tiene fiebre");
+    }
 }
+
