@@ -10,9 +10,9 @@ import java.util.Map;
 @RestController
 public class HealthController {
 
-    @GetMapping("/health")
+    @GetMapping("/healths")
     public Map<String, String> health() {
-        return Map.of("Anuski", "LA MEJOR");
+        return Map.of("Saludo1", "Cambio1");
     }
 
   
