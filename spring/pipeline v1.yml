@@ -10,7 +10,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '77ad3a40-92ee-43a4-aba0-e24d98b72669'
+  dockerRegistryServiceConnection: '5b28cb38-b92e-4af2-b272-a376a56a03d5'
   imageRepository: 'spring'
   containerRegistry: 'jld98.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/spring/Dockerfile'
