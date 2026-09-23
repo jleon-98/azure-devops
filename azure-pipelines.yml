@@ -12,7 +12,7 @@ stages:
     displayName: Build
 
     pool:
-      name: 'on-prem-linux'
+      name: 'on-prem pool'
 
     steps:
 
