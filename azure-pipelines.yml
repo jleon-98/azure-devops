@@ -1,0 +1,43 @@
+variables:
+  dockerRegistryServiceConnection: '77ad3a40-92ee-43a4-aba0-e24d98b72669'
+  imageRepository: 'spring'
+  dockerfilePath: '$(Build.SourcesDirectory)/spring/Dockerfile'
+
+stages:
+- stage: Build
+  displayName: Build and push stage
+
+  jobs:
+  - job: Build
+    displayName: Build
+
+    pool:
+      name: 'on-prem-linux'
+
+    steps:
+
+    - task: AzureCLI@2
+      displayName: Calculate next image version
+      inputs:
+        azureSubscription: '7e171f75-ea23-42dc-b642-becd86ebc3c8'
+        scriptType: bash
+        scriptLocation: inlineScript
+        inlineScript: |
+          tags=$(az acr repository show-tags \
+            --name jld98 \
+            --repository spring \
+            --output tsv)
+
+          latest=$(printf '%s\n' "$tags" | \
+            awk '/^[0-9]+$/ { if ($1 > max) max=$1 } END { print max }')
+
+          if [ -z "$latest" ]; then
+            next=1
+          else
+            next=$((latest + 1))
+          fi
+
+          echo "Última versión: $latest"
+          echo "Nueva versión: $next"
+
+          echo "##vso[task.setvariable variable=tag]$next"
