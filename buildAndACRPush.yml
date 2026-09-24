@@ -83,7 +83,9 @@ stages:
 
 
   - job: Delete_pushed_image_from_local_registry
-    dependsOn: Build_and_push_an_image_to_container_registry
+    dependsOn: 
+    - Build_and_push_an_image_to_container_registry
+    - Extract_last_tag_from_ACR
     variables: 
       tag: $[ dependencies.Extract_last_tag_from_ACR.outputs['calculateTag.tag'] ]
     displayName: Delete pushed image from local registry
