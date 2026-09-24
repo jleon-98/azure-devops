@@ -76,8 +76,8 @@ stages:
           $(tag)
 
 
-  - job: Build and push an image to container registry
-    displayName: Build and push an image to container registry
+  - job: Delete pushed image from local registry
+    displayName: Delete pushed image from local registry
     pool:
       name: 'on-prem pool'
     steps:
