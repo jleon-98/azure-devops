@@ -26,7 +26,7 @@ stages:
 - stage: Build
   displayName: Build and push stage
   jobs:
-  - job: Extract last tag from ACR
+  - job: Extract_last_tag_from_ACR
     displayName: Extract last tag from ACR
     pool:
       name: 'on-prem pool'
@@ -59,7 +59,7 @@ stages:
           echo "##vso[task.setvariable variable=tag]$next"
   
   
-  - job: Build and push an image to container registry
+  - job: Build_and_push_an_image_to_container_registry
     displayName: Build and push an image to container registry
     pool:
       name: 'on-prem pool'
@@ -76,7 +76,7 @@ stages:
           $(tag)
 
 
-  - job: Delete pushed image from local registry
+  - job: Delete_pushed_image_from_local_registry
     displayName: Delete pushed image from local registry
     pool:
       name: 'on-prem pool'
