@@ -31,7 +31,6 @@ stages:
     pool:
       name: 'on-prem pool'
     steps:
-
     - task: AzureCLI@2
       name: calculateTag
       displayName: Calculate next image version
@@ -59,7 +58,6 @@ stages:
 
           echo "##vso[task.setvariable variable=tag;isOutput=true]$next"
   
-  
   - job: Build_and_push_an_image_to_container_registry
     dependsOn: Extract_last_tag_from_ACR
     variables: 
@@ -78,9 +76,6 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-
-
-
 
   - job: Delete_pushed_image_from_local_registry
     dependsOn: 
