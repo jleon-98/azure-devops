@@ -18,7 +18,7 @@ public class HealthController {
   
 
   @GetMapping("/fiebre")
-    public Map<String, String> health() {
+    public Map<String, String> fiebre() {
         return Map.of("Temperatura del paciente", "No tiene fiebre");
     }
 }
