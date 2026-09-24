@@ -60,6 +60,7 @@ stages:
   
   
   - job: Build_and_push_an_image_to_container_registry
+    dependsOn: Extract_last_tag_from_ACR
     displayName: Build and push an image to container registry
     pool:
       name: 'on-prem pool'
@@ -77,6 +78,7 @@ stages:
 
 
   - job: Delete_pushed_image_from_local_registry
+    dependsOn: Build_and_push_an_image_to_container_registry
     displayName: Delete pushed image from local registry
     pool:
       name: 'on-prem pool'
