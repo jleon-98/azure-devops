@@ -118,7 +118,7 @@ stages:
         namespace: 'default' 
       # Commands
         command: 'set'
-        arguments: 'image deployment/test-spring-svc test-spring-svc=jld98.azurecr.io/spring:$(tag)'
+        arguments: 'image deployment/test-spring test-spring=jld98.azurecr.io/spring:$(tag)'
 
 
 
@@ -133,4 +133,4 @@ stages:
         namespace: 'default' 
       # Commands
         command: 'rollout'
-        arguments: 'status deployment/test-spring-svc'
+        arguments: 'status deployment/test-spring'
