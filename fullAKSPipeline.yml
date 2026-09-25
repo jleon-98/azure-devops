@@ -121,6 +121,7 @@ stages:
         arguments: 'image deployment/test-spring-svc test-spring-svc=jld98.azurecr.io/spring:$(tag)'
 
 
+
     - task: Kubernetes@1
       inputs:
       # Kubernetes Cluster
