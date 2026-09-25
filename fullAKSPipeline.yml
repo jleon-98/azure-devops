@@ -118,7 +118,7 @@ stages:
         namespace: 'default' 
       # Commands
         command: 'set'
-        arguments: 'image deployment/test-spring test-spring=jld98.azurecr.io/spring:$(tag)'
+        arguments: 'image deployment/test-spring spring=jld98.azurecr.io/spring:$(tag)'
 
 
 
