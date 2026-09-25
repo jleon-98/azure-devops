@@ -112,7 +112,7 @@ stages:
       # Kubernetes Cluster
         connectionType: 'Kubernetes Service Connection' 
         kubernetesServiceEndpoint: '8d61eb6e-74c2-48ad-88a5-67c2f727d274' 
-        azureSubscriptionEndpoint: '044b1a00-f556-4427-9c9f-b269728f5d0c'
+        azureSubscriptionEndpoint: '7e171f75-ea23-42dc-b642-becd86ebc3c8'
         azureResourceGroup: 'devops-rg' 
         kubernetesCluster: 'k8s-cluster' 
         namespace: 'default' 
