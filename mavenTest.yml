@@ -1,0 +1,17 @@
+- stage: Test
+  displayName: Run tests
+
+  jobs:
+  - job: RunTests
+    displayName: Run Maven tests
+
+    pool:
+      name: 'on-prem pool'
+
+    steps:
+    - checkout: self
+
+    - bash: |
+        cd spring
+        ./mvnw test
+      displayName: Run tests with Maven Wrapper
