@@ -45,6 +45,7 @@ stages:
       displayName: Run tests with Maven Wrapper
 
 - stage: Build
+  dependsOn: Test
   displayName: Build and push stage
   jobs:
   - job: Extract_last_tag_from_ACR
