@@ -24,6 +24,12 @@ variables:
 
 stages:
 
+
+
+
+
+
+
 - stage: Test
   displayName: Run tests
 
@@ -36,6 +42,26 @@ stages:
 
     steps:
     - checkout: self
+
+    - bash: |
+        echo "===== DONDE ESTOY ====="
+        pwd     
+
+        echo "===== SOURCES ====="
+        echo "$(Build.SourcesDirectory)"
+
+        echo "===== COMMIT ====="
+        git log -1 --oneline
+
+        echo "===== CONTROLLER ====="
+        grep -n "GetMapping" "$(Build.SourcesDirectory)/spring/src/main/java/com/example/tasks/HealthController.java"
+
+        echo "===== TEST ====="
+        grep -n "get(\"/health" "$(Build.SourcesDirectory)/spring/src/test/java/com/example/tasks/HealthControllerTest.java"
+
+        echo "===== LIMPIANDO ====="
+        cd "$(Build.SourcesDirectory)/spring"
+
 
     - bash: |
         
