@@ -31,4 +31,9 @@ class HealthControllerTest {
         mockMvc.perform(get("/health")).andExpect(content().json("{\"Saludo3\":\"Nueva versión desplegada\"}"));
     }
 
+    @Test
+    void pruebaQueEstoyEjecutandoEsteTest() {
+        System.out.println("🔥 ESTOY EJECUTANDO ESTE TEST 🔥");
+}
+
 }
