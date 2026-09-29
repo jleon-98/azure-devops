@@ -57,7 +57,7 @@ stages:
         grep -n "GetMapping" "$(Build.SourcesDirectory)/spring/src/main/java/com/example/tasks/HealthController.java"
 
         echo "===== TEST ====="
-        grep -n "get(\"/health" "$(Build.SourcesDirectory)/spring/src/test/java/com/example/tasks/HealthControllerTest.java"
+        grep -n "get(\"/health" "$(Build.SourcesDirectory)/spring/src/test/java/HealthControllerTest.java"
 
         echo "===== LIMPIANDO ====="
         cd "$(Build.SourcesDirectory)/spring"
