@@ -24,17 +24,15 @@ class HealthControllerTest {
                 .andExpect(status().isOk());
     }
 
-
-
-    @Test
+    void printJSONResponse() throws Exception {
+        mockMvc.perform(get("/healths"))
+            .andDo(print())
+            .andExpect(status().isOk());
+    }
+       @Test
     void healthShouldReturnCorrectResponse() throws Exception {
 
-        mockMvc.perform(get("/health")).andExpect(content().json("{\"Saludo3\":\"Nueva versión desplegada\"}"));
+        mockMvc.perform(get("/healths")).andExpect(content().json("{\"Saludo3\":\"Nueva versión desplegada\"}"));
     }
-
-    @Test
-    void pruebaQueEstoyEjecutandoEsteTest() {
-        System.out.println("🔥 ESTOY EJECUTANDO ESTE TEST 🔥");
-}
 
 }
