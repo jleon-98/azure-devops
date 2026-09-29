@@ -23,7 +23,29 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 stages:
+
+- stage: Test
+  displayName: Run tests
+
+  jobs:
+  - job: RunTests
+    displayName: Run Maven tests
+
+    pool:
+      name: 'on-prem pool'
+
+    steps:
+    - checkout: self
+
+    - bash: |
+        
+        cd spring
+        chmod +x "mvnw"
+        ./mvnw test
+      displayName: Run tests with Maven Wrapper
+
 - stage: Build
+  dependsOn: Test
   displayName: Build and push stage
   jobs:
   - job: Extract_last_tag_from_ACR
