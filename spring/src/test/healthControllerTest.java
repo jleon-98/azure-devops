@@ -24,7 +24,7 @@ class HealthControllerTest {
                 .andExpect(status().isOk());
     }
 
-    void healthShouldReturnOk() throws Exception {
+    void printJSONResponse() throws Exception {
 
         mockMvc.perform(get("/healths"))
             .andDo(print())
