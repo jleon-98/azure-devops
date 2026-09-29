@@ -32,7 +32,7 @@ class HealthControllerTest {
        @Test
     void healthShouldReturnCorrectResponse() throws Exception {
 
-        mockMvc.perform(get("/health")).andExpect(content().json("{\"Saludo3\":\"Nueva versión desplegada\"}"));
+        mockMvc.perform(get("/healths")).andExpect(content().json("{\"Saludo3\":\"Nueva versión desplegada\"}"));
     }
 
 }
