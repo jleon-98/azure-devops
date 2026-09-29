@@ -30,6 +30,8 @@ class HealthControllerTest {
         mockMvc.perform(get("/healths"))
             .andDo(print())
             .andExpect(status().isOk());
+
+            movz
     }
     
 }
