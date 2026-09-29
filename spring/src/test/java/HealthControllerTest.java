@@ -21,7 +21,7 @@ class HealthControllerTest {
     @Test
     void healthShouldReturnOk() throws Exception {
 
-        mockMvc.perform(get("/health"))
+        mockMvc.perform(get("/healths"))
                 .andExpect(status().isOk());
     }
 

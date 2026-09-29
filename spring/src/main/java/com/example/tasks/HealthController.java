@@ -12,7 +12,7 @@ public class HealthController {
 
     @GetMapping("/healths")
     public Map<String, String> health() {
-        return Map.of("Saludo1", "Nueva versión desplegada");
+        return Map.of("Saludo3", "Nueva versión desplegada");
     }
 
   
