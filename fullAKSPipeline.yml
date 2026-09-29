@@ -38,7 +38,9 @@ stages:
     - checkout: self
 
     - bash: |
+        
         cd spring
+        chmod +x "mvnw"
         ./mvnw test
       displayName: Run tests with Maven Wrapper
 
